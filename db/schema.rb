@@ -10,11 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_03_165032) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_03_181610) do
   create_table "phones", force: :cascade do |t|
     t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["number"], name: "index_phones_on_number"
+  end
+
+  create_table "tokens", force: :cascade do |t|
+    t.string "body"
+    t.datetime "expiration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "verification_id"
+    t.index ["body"], name: "index_tokens_on_body"
+    t.index ["verification_id"], name: "index_tokens_on_verification_id"
+  end
+
+  create_table "traits", force: :cascade do |t|
+    t.string "slug"
+    t.integer "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_traits_on_slug"
   end
 
   create_table "verifications", force: :cascade do |t|
