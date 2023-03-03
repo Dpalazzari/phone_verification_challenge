@@ -1,6 +1,19 @@
-<h1>Verify Your Phone!</h1>
+<h1 id='verify-your-phone'>Verify Your Phone!</h1>
+<h1 id='sms-sent' hidden>An SMS with a verification code has been sent to the number provided!</h1>
+<h1 id='verification-successful' hidden>Verification Successful!</h1>
+
 <form>
-  <label>Enter your Phone Number:</label><input type="text"/><br/>
-  <label>Enter the Verification Code you just received:</label><input type="text" disabled/><br/>
-  <button>Send Verification Code</button> <button disabled>Verify Code</button>
+<div id='phone-verify-fields'>
+  <label>Enter your Phone Number:</label><input id='phone-number' type="text"/><br/>
+  <button id='submit-phone-number'>Send Verification Code</button>
+</div>
+  
+  <div id='verify-code-fields' hidden>
+    <label>Please enter the Verification Code you just received:</label><input id='verification-code' type="text"/><br/>
+    <button id='submit-verification-code'>Verify Code</button>
+  </div>
+
+
+  <input type="hidden" id='phone-primary-key-id'/><br/>
+  <input type="hidden" id='verification-primary-key-id'/><br/>
 </form>
