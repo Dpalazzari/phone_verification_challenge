@@ -10,7 +10,7 @@ class VerifyCodeController < ApplicationController
       token = verification.tokens.find_by(body: params[:verification_code])
       # If the token is found, the phone is verified - update the verification record accordingly
       if token
-      #  verification.verify_confirmed
+       verification.verify_confirmed
        render json: { phone: phone.verify_view, message: 'verification code accepted.' }, status: 200
       else
         # Perhaps the user types in the verification code incorrectly?
