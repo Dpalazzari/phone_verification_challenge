@@ -11,7 +11,7 @@ class CreateTraits < ActiveRecord::Migration[7.0]
     # Initialize two trait records for setting token and verificaiton expiration dates
     Trait.create(slug: 'token_expiration_days', value: 1)
     Trait.create(slug: 'verification_expiration_days', value: 365)
-    Trait.create(slug: 'verification_code_length', value: 4)
+    Trait.create(slug: 'verification_code_length', value: 3)
 
   end
 

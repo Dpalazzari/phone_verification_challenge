@@ -26,10 +26,9 @@ class Phone < ApplicationRecord
   end
 
   def verify_view
-    {
-      phone: attributes,
-      verification: verifications.last.attributes
-    }
+    obj = attributes
+    attributes[:verification] = verifications.last.attributes
+    obj
   end
 
   def already_verified?
